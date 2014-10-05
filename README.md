@@ -13,4 +13,4 @@ function list
 
 usage
 ===
-http://alanshi.github.io/falco
+http://alanshi.github.io/falcon
