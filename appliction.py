@@ -61,7 +61,7 @@ def main():
     application = Application()
 
     application.settings['DEBUG_TEMPLATE'] = tornado.options.options.debug_template
-    logging.info("Start Falco HTTP server on port:%d ...\n\n" % (options.port))
+    logging.info("Start %s HTTP server on port:%d ...\n\n" % (config.PROJECT_NAME,options.port))
     http_server = tornado.httpserver.HTTPServer(application,xheaders=True)
     http_server.listen(port=options.port,address=options.ip_address)
     tornado.ioloop.IOLoop.instance().start()
