@@ -25,10 +25,9 @@ class BaseHandler(tornado.web.RequestHandler):
     检查request请求合法性(数据过滤,安全检查)
     """
 
-    self.session = Session(self, self.application.settings['cookie_secret'],
-      self.application.settings['session_timeout'])
+    #self.session = Session(self, self.application.settings['cookie_secret'],self.application.settings['session_timeout'])
 
-    logging.debug("BaseHandler session=%s" % self.session)
+    #logging.debug("BaseHandler session=%s" % self.session)
 
   @property
   def db(self):
@@ -43,11 +42,11 @@ class RestHandler(BaseHandler):
     """
     初始化 RestHandler类,实例化session
     """
+    
     super(RestHandler, self).__init__(*argc, **argkw)
     """
     TODO
     检查request请求合法性(数据过滤,安全检查)
     """
-    self.session = Session(self, self.application.settings['cookie_secret'],
-      self.application.settings['rest_session_timeout'])
-    logging.debug("RestHandler session=%s" % self.session)
+    #self.session = Session(self, self.application.settings['cookie_secret'],self.application.settings['rest_session_timeout'])
+    #logging.debug("RestHandler session=%s" % self.session)

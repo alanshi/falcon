@@ -15,8 +15,8 @@ SITE_PORT = 8000
 SITE_IPADDRESS = "127.0.0.1"
 SITE_PATH = os.path.dirname(os.path.abspath(__file__))
 STATIC_PATH = os.path.join(SITE_PATH, 'static')
-UPLOAD_ROOT_PATH = os.path.join(SITE_PATH, 'static/upload')
 TEMPLATE_PATH = os.path.join(SITE_PATH, 'template')
+UPLOAD_ROOT_PATH = os.path.join(STATIC_PATH, 'upload')
 LOGIN_URL = '/login'
 DEBUG_MODE = True
 
@@ -26,10 +26,10 @@ SESSION_TIMEOUT = 3600*4
 REST_SESSION_TIMEOUT = 3600*24*30
 
 #-- logging config --
-LOG_LEVEL = "debug"
+
 LOG_PATH = os.path.join(SITE_PATH, 'log')
 LOG_FILE = os.path.join(LOG_PATH, '%s.log' % (PROJECT_NAME))
-
+LOG_LEVEL = "debug"
 
 #-- mysql db config --
 MYSQL_HOST = 'localhost'
@@ -50,6 +50,6 @@ IMG_URL = u"/img"
 
 #secret config
 HTTP_ONLY = True
-XSRF_COOKIES = True
+XSRF_COOKIES = False
 AUTOESCAPE = None
 
