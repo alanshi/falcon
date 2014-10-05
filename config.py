@@ -8,20 +8,25 @@ import os.path
 import base64
 
 #-- application config --
-PROJECT_NAME = 'falco'
+PROJECT_NAME = 'falcon'
 SECRET_KEY = 'NjNkM2RhZDVkODE1Njk1N2NiMmZhNDBhMzMzZWRlZjZmZjYyMjc2ODFkM2JjMzllZWVmN2ZiMDIyMjZiNzcyMA=='
 SITE_COOKIE = 'ZWRkNzNkZTQzYzQ4YzYwZDE1OGQ1YWZmNWRlNmJjYmRkODU3NmRkNGI3ZDQ3NWZhZTZiODkxZWRhNWIzMzg5NA=='
+SITE_PORT = 8000
+SITE_IPADDRESS = "127.0.0.1"
 SITE_PATH = os.path.dirname(os.path.abspath(__file__))
 STATIC_PATH = os.path.join(SITE_PATH, 'static')
 UPLOAD_ROOT_PATH = os.path.join(SITE_PATH, 'static/upload')
 TEMPLATE_PATH = os.path.join(SITE_PATH, 'template')
 LOGIN_URL = '/login'
+DEBUG_MODE = True
+
 
 #-- session timeout --
 SESSION_TIMEOUT = 3600*4
 REST_SESSION_TIMEOUT = 3600*24*30
 
-# default log filename
+#-- logging config --
+LOG_LEVEL = "debug"
 LOG_PATH = os.path.join(SITE_PATH, 'log')
 LOG_FILE = os.path.join(LOG_PATH, '%s.log' % (PROJECT_NAME))
 
@@ -42,3 +47,9 @@ MDB_NAME = 'test'
 JS_URL = u"/js"
 CSS_URL = u"/css"
 IMG_URL = u"/img"
+
+#secret config
+HTTP_ONLY = True
+XSRF_COOKIES = True
+AUTOESCAPE = None
+
