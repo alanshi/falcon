@@ -173,7 +173,7 @@ class DbBackend(Singleton):
       logging.debug("condition=%s, data=%s" % (condition,data))
       ret = self._database[collect_name].find_and_modify(query=condition, update=data, new=True)
       logging.info("Leaving update...")
-      return result
+      return ret
     except Exception, e:
       logging.error("update collection '%s' error: %s" % (collect_name, e))
       logging.info("Leaving update_collect...")
