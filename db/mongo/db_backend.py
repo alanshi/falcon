@@ -75,7 +75,7 @@ class DbBackend(Singleton):
     
     try:
       self.__class__._db_conn = Connection(db_parm['host'], db_parm['port'])      
-      self.__class__._database = self.__class__._db_conn[db_parm.get("db_file", "rainbow")]
+      self.__class__._database = self.__class__._db_conn[db_parm.get("db_file", "falcon")]
     except Exception, e:
       logging.critical('Failed to connect mongodb: %s' % (e) )
       logging.info('Leaving DbBackend....')

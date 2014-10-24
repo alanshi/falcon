@@ -15,6 +15,7 @@ from db.mongo.settings import db_backend
 
 
 class TestDbBackend(unittest.TestCase): 
+
   data = {}
   @classmethod
   def setUpClass(cls):  
@@ -22,8 +23,7 @@ class TestDbBackend(unittest.TestCase):
     print '-------------- %s ----------------------' % (cls)
 
   def testcase_insert(self):
-    #return self.assertEqual(self.data, db_backend.insert("db_backend_collect", self.data)) 
-    print db_backend.insert("db_backend_collect", self.data)
+    return self.assertEqual(self.data, db_backend.insert("db_backend_collect", self.data)) 
 
 def suite():
 

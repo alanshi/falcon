@@ -19,7 +19,7 @@ DATABASE_SETTINGS = {
   #"engine": "backends.mongodb", # name of monogdb moduel
   "host": "localhost",             # Set host address
   "port": 27017,                   # Set port
-  "data_file":config.PROJECT_NAME,    # Set database file
+  "db_file":config.PROJECT_NAME,    # Set database file
   "max_pool_size":10,
 }
 
