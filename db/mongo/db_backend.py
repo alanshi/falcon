@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 
-# Copyright © 2014 Chengdu WeShare Technology
+# Copyright © 2014
 # All rights reserved.
 #
 # Filename: db_backend.py
@@ -109,7 +109,7 @@ class DbBackend(Singleton):
       logging.info("Leaving findone_collect...")
       return None
 
-  def find_collect(self, collect_name, condition={}, skip=0, limit=config
+  def find(self, collect_name, condition={}, skip=0, limit=config
                    .DEFAULT_PAGE_SIZE, fields=None):
     """
     search in collect by a condition dict
@@ -179,7 +179,7 @@ class DbBackend(Singleton):
       logging.info("Leaving update_collect...")
       return None
 
-  def delete_collect(self, collect_name, condition={}):
+  def delete(self, collect_name, condition={}):
     """
       delete collect by the specified condition
         collect_name    -   collection name

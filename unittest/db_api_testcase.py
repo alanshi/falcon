@@ -4,44 +4,40 @@
 # Copyright © 2014
 # All rights reserved.
 #
-# Filename: db_backend_testcase.py
+# Filename: db_api_testcase.py
 # -----------------------------------------------------------------
 # 2014-10-11 created
 import sys
 sys.path.append('..')
 
 from tornado.test.util import unittest
-from db.mongo.settings import db_backend
+from db.mongo import db_api
 
 
-class TestDbBackend(unittest.TestCase): 
+class TestDbApi(unittest.TestCase): 
 
   data = {}
-  collect_name = 'db_backend_collect'
   obj_id = None
+  collect_name = 'user'
   @classmethod
   def setUpClass(cls):  
     
     print '-------------- %s ----------------------' % (cls)
 
-  def testcase_insert(self):
-    self.obj_id = db_backend.insert(self.collect_name, self.data)
+  def testcase_add_user(self):
+    self.obj_id = db_backend.db_api(self.collect_name, self.data)
     return self.assertIsNotNone(self.obj_id)
-
-  def testcase_update(self):
-
-    print db_backend.update(self.collect_name,{'_id':self.obj_id},{'$set':{'':'11'}})
 
 
 def suite():
 
   tests  = [
-      'testcase_insert',
-      #'testcase_update'
+      'testcase_add_user',
+      
       ]
-  return unittest.TestSuite(map(TestDbBackend, tests))
+  return unittest.TestSuite(map(TestDbApi, tests))
 
 if __name__ == '__main__':
 
-  TestDbBackend.setUpClass()
+  TestDbApi.setUpClass()
   unittest.TextTestRunner(verbosity=2).run(suite())

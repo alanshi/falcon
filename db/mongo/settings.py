@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 
-# Copyright © 2014 Chengdu WeShare Technology
+# Copyright © 2014 
 # All rights reserved.
 #
 # Filename: settings.py
