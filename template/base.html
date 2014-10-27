@@ -1,0 +1,14 @@
+{#
+ #
+ # Filename: base.html, homepage
+ # -----------------------------------------------------------------
+ # 2014-10-27  created
+#}
+<!DOCTYPE html>
+<html lang="en">
+    {% include "include/head.html" %}
+    <body>
+        {% block content %}{% end %}
+        {% block script %}{% end %}
+    </body>
+</html>
