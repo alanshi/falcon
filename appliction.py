@@ -17,6 +17,8 @@ import tornado.log
 from tornado.options import define, options
 from tornado.log import logging
 
+from db.redis.database import redis_conn
+
 import config
 import routing
 
@@ -51,6 +53,10 @@ class Application(tornado.web.Application):
     )
 
     super(Application,self).__init__(routing.routings,**settings)
+
+
+    # redis conn init
+    self.cache = redis_conn
 
 def main():
 

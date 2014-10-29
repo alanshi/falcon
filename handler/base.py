@@ -10,6 +10,7 @@ import functools
 import tornado.web
 from tornado.log import logging
 
+from db.mongo import db_interface
 
 class BaseHandler(tornado.web.RequestHandler):
 
@@ -38,8 +39,11 @@ class BaseHandler(tornado.web.RequestHandler):
 
   @property
   def db(self):
-    return True
+    return db_interface
 
+  @property
+  def cache(self):
+    return self.application.cache
 
 def access_log(method):
   """

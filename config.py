@@ -39,9 +39,16 @@ MYSQL_PASSWD = ''
 MYSQL_NAME = ''
 
 #-- mongodb config --
-MONGO_HOST = 'localhost'
-MONGO_PORT = 27017
-MDB_NAME = 'test'
+MONGODB_HOST = 'localhost'
+MONGODB_PORT = 27017
+MONGODB_NAME = PROJECT_NAME
+MONGODB_MAX_POOL_SIZE = 10
+
+
+#-- redis config --
+REDIS_HOST = '127.0.0.1'
+REDIS_PORT = 6379
+REDIS_DB = 0
 
 # sub-urls
 JS_URL = u"/js"
