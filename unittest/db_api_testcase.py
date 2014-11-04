@@ -13,7 +13,6 @@ sys.path.append('..')
 from tornado.test.util import unittest
 from db.mongo import db_api
 
-
 class TestDbApi(unittest.TestCase): 
 
   data = {}
@@ -25,7 +24,7 @@ class TestDbApi(unittest.TestCase):
     print '-------------- %s ----------------------' % (cls)
 
   def testcase_add_user(self):
-    self.obj_id = db_backend.db_api(self.collect_name, self.data)
+    self.obj_id = db_api.add_user(self.data)
     return self.assertIsNotNone(self.obj_id)
 
 

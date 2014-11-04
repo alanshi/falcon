@@ -7,8 +7,8 @@
 # Filename: db_api.py
 # -----------------------------------------------------------------
 # 2014-10-26 created
-
-import db_backend
+from tornado.log import logging
+from settings import *
 
 
 def add_user(user_doc):
@@ -36,7 +36,7 @@ def add_user(user_doc):
   """
   logging.info('add_user  Entering...')
 
-  return db_api.insert(collect_name = 'user',
+  return db_backend.insert(collect_name = 'user',
                        data = user_doc
     )
 
